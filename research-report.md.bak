@@ -1,0 +1,54 @@
+# Controller and Hand Gesture Recognition for Interactions in Virtual Reality Environments
+
+**Goal**
+- [ ] Real-time, online controller/hand gesture recognition with good accuracy
+- [ ] Good generalization performance with few samples.
+  - [ ] Validate: Cross-Validation
+  - [ ] Validate: Boot-strapping
+  - [ ] Validate: permutation hypothesis test
+- [ ] Augmentations: Noise addition & Rotation/Translation transformation of the trajectory
+- [ ] Indicate and predict in real-time, which gesture is being performed. Give indicator on the progress of the gesture and signal when gesture is completed
+- [ ] Test on augmented (translated/rotated + noise data)
+
+**SkTime Pre-Processing**
+- [ ] TSInterpolator
+- [ ] IntervalSegmenter
+
+**SkTime Benchmark**
+- [ ] CNNClassifier (2017)
+- [ ] FCNClassifier (2017)
+- [ ] MLPClassifier (2017)
+- [ ] TapNetClassifier (2020)
+- [ ] IndividualBoss (2015) - SymbolicFourierApproximationSymbols
+- [ ] IndividualTDE (2020) - Extension of BOSS
+- [ ] MUSE
+- [ ] KNeighborsTimeSeriesClassifier
+- [ ] TEASER (Two-tier early and accurate series classfier) (2020)
+- [ ] Catch22
+- [ ] SignatureClassifier (2020)
+- [ ] Rocket
+  
+**Proposed**
+- [ ] Unsupervised pre-training: Masked-autoencoders (generative model) or Barlow-Twins, 
+- [ ] LSTM based, few layers, keras, onnx export
+
+- Related Work:
+  - Skeletal Twins: https://ieeexplore.ieee.org/abstract/document/9859595?casa_token=LPsnBrucsKgAAAAA:hPlW1HtvHtvyv6EXweJj8N9Fn84LMT7xU0tcgRZ5VWH2ihUm62fJ0Zw4P8P8kNa20OwUfDovr0g
+  - Barlow Twins: https://arxiv.org/pdf/2103.03230.pdf
+  - BOSS: ["The BOSS is concerned with time series classification in the presence of noise"](https://link.springer.com/article/10.1007/s10618-014-0377-7)
+  - Matthew Middlehurst, James Large, Gavin Cawley and Anthony Bagnall “The Temporal Dictionary Ensemble (TDE) Classifier for Time Series Classification”, in proceedings of the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases, 2020.
+  - Schäfer, Patrick, and Ulf Leser. “TEASER: early and accurate time series classification.” Data mining and knowledge discovery 34, no. 5 (2020)
+  - 
+
+**TODO**
+*Dataset*
+- [ ] Subject info in controller dataset (tag + excel with recording times)
+- [ ] Subject info in hand dataset (scripted from excel with recording times)
+- [ ] detailed_index_meta for hand dataset
+- [ ] Evaluation of right/left controller identification algorithm via VRGestures visualization
+
+*Benchmark*
+- [X] Write dataloader for hand gesture dataset
+- [X] Write train/val/test split generator for hand dataset (stratify)
+- [X] Extend controller dataloader to take into account left/right controller gestures
+- [ ] Write test script that evaluates classifiers in the test set of the dataset
